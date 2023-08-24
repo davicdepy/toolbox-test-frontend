@@ -1,0 +1,19 @@
+version: '3'
+services:
+  client:
+    image: fullstack-test-frontend
+    build: .
+    networks:
+      - frontend
+    ports:
+      - "3000:3000"
+
+  web-cli:
+    image: fullstack-test-frontend
+    networks:
+      - frontend
+    command: sh
+
+networks:
+  backend:
+    driver: bridge
